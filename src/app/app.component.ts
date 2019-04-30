@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
-import { collegueMock } from './mock/collegues.mock';
-import { matriculesArray } from './mock/matricules.mock';
+import { Component, OnInit } from '@angular/core';
+import {DataService} from './services/data.service';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +14,15 @@ import { matriculesArray } from './mock/matricules.mock';
   `
 })
 
-export class AppComponent {
-  unObjetCollegueFourni = collegueMock;
-  unTableauDeMatricules = matriculesArray;
+export class AppComponent implements OnInit {
+  unObjetCollegueFourni;
+  unTableauDeMatricules;
+
+  constructor(private _dataSrv:DataService) {}
+
+  ngOnInit(): void {
+    this.unObjetCollegueFourni = this._dataSrv.returnCurrentCollegue();
+    this.unTableauDeMatricules = this._dataSrv.findByName('');
+    
+  }
 }

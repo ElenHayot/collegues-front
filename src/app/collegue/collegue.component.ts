@@ -7,16 +7,16 @@ import { Collegue } from '../models/Collegue';
 })
 export class CollegueComponent implements OnInit {
 
-  @Input() col: Collegue
+  @Input() col:Collegue;
   updateCol:Boolean;
 
   constructor() {}
 
   ngOnInit() {}
 
-  updateCollegue() {
+  updateCollegue() {  
     alert("Modification d'un collegue");
-
+    this.updateCol = true;
   }
 
   createCollegue() {

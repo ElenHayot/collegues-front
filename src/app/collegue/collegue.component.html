@@ -30,14 +30,14 @@
 
   <br/>
   <div class="row">
-  <button class="col-4" *ngIf="updateCol" (click)="true">Valider</button>
-  <button class="col-4" *ngIf="updateCol" (click)="updateCol=false">Retour</button>
+  <button class="col-4" *ngIf="updateCol" (click)="true">OK</button>
+  <button class="col-4" *ngIf="updateCol" (click)="updateCol=false">Back</button>
   </div>
 
   <div class="row">
-    <a [hidden]="updateCol" class="col-8" href="" style="text-decoration: underline" (click)="createCollegue()">Créer un nouveau collègue</a>
+    <a [hidden]="updateCol" class="col-8" href="" style="text-decoration: underline" (click)="createCollegue()">Register a new colleague</a>
   
-    <button class="col-4" (click)="updateCol=true" [hidden]="updateCol">Modifier</button>
+    <button class="col-4" (click)="updateCollegue()" [hidden]="updateCol">Update</button>
   </div>
   
 </ul>

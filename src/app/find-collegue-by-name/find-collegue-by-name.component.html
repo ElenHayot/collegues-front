@@ -2,13 +2,16 @@
   <br/><br/><br/>
 
   <div class="row">
-    <h6 class="col-5" style="text-decoration:underline">Recherche par nom:</h6>
-    <div class="col-4"><input type="texte" class="form-control" #value></div>
-    <button class="col-3" (click)="afficherListe=true">Rechercher</button>  
+    <h6 class="col-4" style="text-decoration:underline">Find by name:</h6>
+    <div class="col-5"><input type="texte" class="form-control" #value></div>
+    <button class="col-3" (click)="showListe()">Search</button>  
   </div>
   <br />
   <ul *ngIf="afficherListe" >
-    <h6>*** Liste des matricules ***</h6>
-    <li *ngFor="let item of mat">{{item}}</li></ul>
-
+    <h6 style="text-align:center">*** List of matricules with name ...***</h6>
+    <br />
+    
+    <li *ngFor="let item of mat">{{item}}</li>
+    <div style="text-align:right"><button (click)="afficherListe=false">Back</button></div>
+  </ul>
 </div>
