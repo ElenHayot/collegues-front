@@ -7,7 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
 export class FindCollegueByNameComponent implements OnInit {
 
   @Input() mat: string;
-
+  afficherListe: Boolean;
+  
   constructor() { }
 
   ngOnInit() {

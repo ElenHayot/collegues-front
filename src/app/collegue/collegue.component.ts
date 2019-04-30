@@ -8,6 +8,7 @@ import { Collegue } from '../models/Collegue';
 export class CollegueComponent implements OnInit {
 
   @Input() col: Collegue
+  updateCol:Boolean;
 
   constructor() {}
 
