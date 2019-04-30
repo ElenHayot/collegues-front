@@ -8,8 +8,17 @@ import { Collegue } from '../models/Collegue';
 export class CollegueComponent implements OnInit {
 
   @Input() col: Collegue
+
   constructor() {}
 
   ngOnInit() {}
+
+  updateCollegue() {
+    alert("Modification d'un collegue");
+  }
+
+  createCollegue() {
+    alert("Creation d'un collegue");
+  }
 
 }
