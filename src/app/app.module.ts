@@ -4,11 +4,13 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { CollegueComponent } from './collegue/collegue.component';
+import { FindCollegueByNameComponent } from './find-collegue-by-name/find-collegue-by-name.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CollegueComponent
+    CollegueComponent,
+    FindCollegueByNameComponent
   ],
   imports: [
     BrowserModule,

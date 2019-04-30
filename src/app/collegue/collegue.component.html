@@ -1,16 +1,46 @@
-<h2>So sssisssssy Colleague!</h2>
+<div class="container">
+
+<h2 >So sssisssssy Colleague!</h2>
 <hr/>
 <ul>
   <img src='{{col.photoUrl}}' width='200' heigth='200'>
-  <li>Matricule : {{col.matricule}}</li>
-  <li>Name : {{col.name}}</li>
-  <li>Firstname : {{col.firstname}}</li>
-  <li>BirthDate : {{col.birthdate}}</li>
-  <li>Email : {{col.email}}</li>
+  <br /><br />
+
+<div class="row">
+  <div class="col-6">
+    <p>Matricule : </p>
+    <p>Name : </p>
+    <p>Firstname : </p>
+    <p>BirthDate : </p>
+    <p [hidden]="updateCol">Email : </p>
+    <p *ngIf="updateCol">Update Email: </p>
+    <p *ngIf="updateCol">Update PhotoUrl : </p>
+  </div>
+
+  <div class="col-6">
+    <p>{{col.matricule}}</p>
+    <p>{{col.name | uppercase}}</p>
+    <p>{{col.firstname}}</p>
+    <p>{{col.birthdate | date: 'dd/MM/yyyy'}}</p>
+    <p [hidden]="updateCol">{{col.email}}</p>
+    <input *ngIf="updateCol" type="texte" class="form-control" #value>
+    <input *ngIf="updateCol" type="texte" class="form-control" #value>
+  </div>
+</div>
+
   <br/>
   <div class="row">
-    <a class="col-3" href="" style="text-decoration: underline" (click)="createCollegue()">Créer un nouveau collègue</a>
-    <button class="col-1" (click)="updateCollegue()">Modifier</button>
+  <button class="col-4" *ngIf="updateCol" (click)="true">Valider</button>
+  <button class="col-4" *ngIf="updateCol" (click)="updateCol=false">Retour</button>
   </div>
+
+  <div class="row">
+    <a [hidden]="updateCol" class="col-8" href="" style="text-decoration: underline" (click)="createCollegue()">Créer un nouveau collègue</a>
+  
+    <button class="col-4" (click)="updateCol=true" [hidden]="updateCol">Modifier</button>
+  </div>
+  
 </ul>
 
+
+</div>

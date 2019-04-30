@@ -1,0 +1,14 @@
+<div class="container">
+  <br/><br/><br/>
+
+  <div class="row">
+    <h6 class="col-5" style="text-decoration:underline">Recherche par nom:</h6>
+    <div class="col-4"><input type="texte" class="form-control" #value></div>
+    <button class="col-3" (click)="afficherListe=true">Rechercher</button>  
+  </div>
+  <br />
+  <ul *ngIf="afficherListe" >
+    <h6>*** Liste des matricules ***</h6>
+    <li *ngFor="let item of mat">{{item}}</li></ul>
+
+</div>

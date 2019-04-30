@@ -15,6 +15,7 @@ export class CollegueComponent implements OnInit {
 
   updateCollegue() {
     alert("Modification d'un collegue");
+
   }
 
   createCollegue() {
