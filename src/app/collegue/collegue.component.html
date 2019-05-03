@@ -7,7 +7,7 @@
   <br /><br />
 
 <div class="row">
-  <div class="col-6">
+  <div class="col-4">
     <p>Matricule : </p>
     <p>Name : </p>
     <p>Firstname : </p>
@@ -17,8 +17,8 @@
     <p *ngIf="updateCol">Update PhotoUrl : </p>
   </div>
 
-  <div class="col-6">
-    <p>{{col.matricule}}</p>
+  <div class="col-8">
+    <small>{{col.matricule}}</small>
     <p>{{col.name | uppercase}}</p>
     <p>{{col.firstname}}</p>
     <p>{{col.birthdate | date: 'dd/MM/yyyy'}}</p>

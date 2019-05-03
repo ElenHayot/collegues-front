@@ -3,15 +3,16 @@
 
   <div class="row">
     <h6 class="col-4" style="text-decoration:underline">Find by name:</h6>
-    <div class="col-5"><input type="texte" class="form-control" #value></div>
-    <button class="col-3" (click)="showListe()">Search</button>  
+    <div class="col-5"><input type="texte" class="form-control" #saisie></div>
+    <button class="col-3" (click)="showListe(saisie.value)">Search</button>  
   </div>
   <br />
   <ul *ngIf="afficherListe" >
     <h6 style="text-align:center">*** List of matricules with name ...***</h6>
     <br />
     
-    <li *ngFor="let item of mat">{{item}}</li>
+    <button type="button" class="btn btn-outline-light" *ngFor="let item of mat" (click)="showCurrentCollegue(item)">{{item}}</button>
+    <p *ngIf="errorOrNot==true">{{errorMsg}}</p>
     <div style="text-align:right"><button (click)="afficherListe=false">Back</button></div>
   </ul>
 </div>

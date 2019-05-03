@@ -1,21 +1,32 @@
 import { Injectable } from '@angular/core';
 import { Collegue } from '../models/Collegue';
-import { matriculesArray } from '../mock/matricules.mock';
-import { collegueMock } from '../mock/collegues.mock';
+import { Subject, Observable } from 'rxjs';
+import {HttpClient} from '@angular/common/http';
+import {environment} from '../../environments/environment'
 
+import {tap } from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-  constructor() { }
+  private subject = new Subject<Collegue>();
 
-  findByName(name: string) :string[]{
-    return matriculesArray;
+  constructor(private _http:HttpClient) { }
+
+  findByName(name: string) :Observable<string[]>{
+     return this._http.get<string[]>(`${environment.backendUrl}?name=${name}`);
   }
 
-  returnCurrentCollegue() :Collegue {
-    return collegueMock;
+  publish(matricule :string):Observable<Collegue> {
+      return this._http.get<Collegue>(`${environment.backendUrl}/${matricule}`)
+      .pipe(
+        tap(col => this.subject.next(col)) 
+      );
+  }
+
+  returnCurrentCollegue() :Observable<Collegue> {
+    return this.subject.asObservable();
   }
 }

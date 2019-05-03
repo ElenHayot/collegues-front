@@ -1,23 +1,51 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import {DataService} from '../services/data.service';
+import { Collegue } from '../models/Collegue';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-find-collegue-by-name',
   templateUrl: './find-collegue-by-name.component.html'
 })
-export class FindCollegueByNameComponent implements OnInit {
+
+export class FindCollegueByNameComponent implements OnInit, OnDestroy {
   
-  @Input() mat:string[];
+  @Input() mat:string[] = [];
+  @Input() errorMsg = '';
   afficherListe: Boolean;
+  errorOrNot: Boolean;
+
+  actionSub: Subscription;
   
   constructor(private _srv:DataService) { }
   
-  ngOnInit() {
+  ngOnInit() {}
+
+  showListe(saisie: string) {
+    this.afficherListe = true;
+    this.actionSub = this._srv.findByName(saisie)
+        .subscribe(
+          tabMatsServeur => {
+            // cas ok
+            this.mat = tabMatsServeur;
+            this.errorOrNot = false;
+          },
+          err => {
+            // cas ko
+            this.errorMsg = err.error;
+            this.errorOrNot = true;
+          }
+        );
   }
 
-  showListe() {
-    this.afficherListe = true;
-    this._srv.findByName('');
+  showCurrentCollegue(matricule : string) {
+    this._srv.publish(matricule).subscribe(col => {}, err => {
+      
+    });
+  }
+
+  ngOnDestroy() {
+    this.actionSub.unsubscribe();
   }
 
 }

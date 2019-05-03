@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
   constructor(private _dataSrv:DataService) {}
 
   ngOnInit(): void {
-    this.unObjetCollegueFourni = this._dataSrv.returnCurrentCollegue();
+    this.unObjetCollegueFourni = this._dataSrv.returnCurrentCollegue('');
     this.unTableauDeMatricules = this._dataSrv.findByName('');
     
   }

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input} from '@angular/core';
 import { Collegue } from '../models/Collegue';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-collegue',
@@ -10,12 +11,17 @@ export class CollegueComponent implements OnInit {
   @Input() col:Collegue;
   updateCol:Boolean;
 
-  constructor() {}
+  constructor(private _srv:DataService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    
+    this._srv.returnCurrentCollegue().subscribe(returnValue => {
+      this.col = returnValue;
+    });
+
+  }
 
   updateCollegue() {  
-    alert("Modification d'un collegue");
     this.updateCol = true;
   }
 
