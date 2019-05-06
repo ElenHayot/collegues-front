@@ -37,13 +37,13 @@
   <br/>
   <div *ngIf="updateCol==true">
     <div class="row">
-      <button type="submit" class="col-4" (click)="updateCollegueFonction()">OK</button>
+      <button type="submit()" class="col-4" (click)="updateCollegueFonction()">OK</button>
   
       <button class="col-4" (click)="updateCol=false">Back</button>
     </div>
     <p>{{backendMsg}}</p>
   </div>
-  <p *ngIf="responseFormIsOk==true && collegue.dirty && collegue.invalid">At list one field is missing !</p>
+  <p *ngIf="responseFormIsOk==true && collegue.dirty && collegue.invalid">At least one field is missing !</p>
 
   <div class="row" [hidden]="updateCol">
     <div class="col-8">
