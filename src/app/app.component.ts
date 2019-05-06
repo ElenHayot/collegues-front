@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from './services/data.service';
+import { Collegue } from './models/Collegue';
 
 @Component({
   selector: 'app-root',
@@ -7,22 +8,22 @@ import {DataService} from './services/data.service';
    
   <div class="row">
   
-    <app-find-collegue-by-name [mat]="unTableauDeMatricules" class="col-6"></app-find-collegue-by-name>
-    <app-collegue [col]="unObjetCollegueFourni" class="col-6"></app-collegue>
-    
+    <app-find-collegue-by-name class="col-6"></app-find-collegue-by-name>
+
+    <app-collegue  class="col-6"></app-collegue>
+
   </div>
+  <hr />
+
   `
 })
 
 export class AppComponent implements OnInit {
-  unObjetCollegueFourni;
-  unTableauDeMatricules;
 
-  constructor(private _dataSrv:DataService) {}
+
+  constructor(private __dataSrv:DataService) {}
 
   ngOnInit(): void {
-    this.unObjetCollegueFourni = this._dataSrv.returnCurrentCollegue('');
-    this.unTableauDeMatricules = this._dataSrv.findByName('');
-    
   }
+
 }

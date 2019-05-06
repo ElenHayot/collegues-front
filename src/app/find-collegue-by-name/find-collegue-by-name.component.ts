@@ -40,7 +40,8 @@ export class FindCollegueByNameComponent implements OnInit, OnDestroy {
 
   showCurrentCollegue(matricule : string) {
     this._srv.publish(matricule).subscribe(col => {}, err => {
-      
+      this.errorMsg = err;
+      this.errorOrNot = true;
     });
   }
 

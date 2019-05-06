@@ -1,0 +1,52 @@
+<div class="container">
+  <form (ngSubmit)="submit()" #newCollegue="ngForm">
+
+    <h2>Create a new sissy colleague !</h2>
+    <hr/>
+    <ul>
+      <img src='{{newCol.photoUrl}}' width='200' heigth='200'>
+      <br />
+      <br />
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="col-4 col-form-label">Name </label>
+          <div class="col-12">
+          <input name="name" type="texte" class="form-control" #name="ngModel" [(ngModel)]="newCol.name" required>
+          </div>
+        </div>
+     
+        <div class="form-group">
+          <label class="col-4 col-form-label">Firstname </label>
+          <div class="col-12">
+          <input name="firstname" type="texte" class="form-control" #firstname="ngModel" [(ngModel)]="newCol.firstname" required>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="col-4 col-form-label">Birthdate </label>
+          <div class="col-12">
+          <input name="birthdate" type="date" class="form-control" #birthdate="ngModel" [(ngModel)]="newCol.birthdate" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-4 col-form-label">Email </label>
+          <div class="col-12">
+          <input name="email" type="texte" class="form-control" #email="ngModel" [(ngModel)]="newCol.email" required>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-4 col-form-label">PhotoUrl </label>
+        <div class="col-9">
+        <input name="photoUrl" type="texte" class="form-control" #photoUrl="ngModel" [(ngModel)]="newCol.photoUrl" required>
+        </div>
+      </div>
+      <div class="text-right"><button class="col-3" type="submit" (click)="createNewCollegue()">Create</button></div>
+
+    </ul>
+
+  </form>
+</div>

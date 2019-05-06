@@ -29,4 +29,12 @@ export class DataService {
   returnCurrentCollegue() :Observable<Collegue> {
     return this.subject.asObservable();
   }
+
+  updateCollegue(matricule, collegueToUp) :Observable<Collegue>{
+    return this._http.patch<Collegue>(`${environment.backendUrl}/${matricule}`,collegueToUp)
+  }
+
+  addNewCollegue(newCol :Collegue) :Observable<Collegue>{
+    return this._http.post<Collegue>(`${environment.backendUrl}`, newCol);
+  }
 }

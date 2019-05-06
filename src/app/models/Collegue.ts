@@ -5,6 +5,6 @@ export class Collegue{
         public birthdate:Date,
         public email:string,
         public photoUrl:string,
-        public matricule:string
+        public matricule?:string
     ){}
 }
