@@ -11,7 +11,7 @@ export class CollegueComponent implements OnInit {
 
   col:Collegue = new Collegue('', '', undefined, '', '', '');
   collegueToUp :CollegueToUpdate = new CollegueToUpdate('','');
-  updateCol:Boolean;
+  updateCol:Boolean;  //tells us if we got to update a colleague or not
   responseFormIsOk:Boolean;
   backendMsg :string ='';
   createCollegueBoolean:Boolean = false;

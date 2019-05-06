@@ -11,7 +11,8 @@ export class CreateCollegueComponent implements OnInit {
 
   newCol =  new Collegue('', '', undefined, '', '', '');
   @Output() createCollegueBoolean:EventEmitter<Boolean> = new EventEmitter<Boolean>();
- 
+  backendMsg :string ='';
+  responseFormIsOk:Boolean = false;
 
   constructor(private _srv:DataService) { }
 
@@ -20,10 +21,16 @@ export class CreateCollegueComponent implements OnInit {
   }
 
   createNewCollegue() {
+    
     this._srv.addNewCollegue(this.newCol).subscribe(
-      returnValue => console.log(returnValue),
-      err => err.error);
-      this.createCollegueBoolean.emit(false);
+      returnValue => {console.log(returnValue);
+                      this.backButtonValue();},
+      err => {this.backendMsg = err.error;
+              this.responseFormIsOk = false;});
+  }
+
+  backButtonValue() {
+    this.createCollegueBoolean.emit(false);
   }
   
 }

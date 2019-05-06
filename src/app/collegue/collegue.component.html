@@ -1,6 +1,6 @@
 <div name="colleguePresentation" *ngIf="createCollegueBoolean==false">
 <div class="container">
-  <form (ngSubmit)="submit()" #collegue="ngForm">
+  <form #collegue="ngForm">
 
 <h2 >So sssisssssy Colleague!</h2>
 <hr/>
@@ -37,9 +37,9 @@
   <br/>
   <div *ngIf="updateCol==true">
     <div class="row">
-      <button type="submit()" class="col-4" (click)="updateCollegueFonction()">OK</button>
+      <button class="col-4" type="button" (click)="updateCollegueFonction()">OK</button>
   
-      <button class="col-4" (click)="updateCol=false">Back</button>
+      <button class="col-4" type="button" (click)="updateCol=false">Back</button>
     </div>
     <p>{{backendMsg}}</p>
   </div>
@@ -47,9 +47,9 @@
 
   <div class="row" [hidden]="updateCol">
     <div class="col-8">
-      <button  class="btn btn-link" (click)="createCollegue()">Register a new colleague</button>
+      <button type="button"  class="btn btn-link" (click)="createCollegue()">Register a new colleague</button>
     </div>
-    <button class="col-4" (click)="updateCollegue()">Update</button>
+    <button type="button" class="col-4" (click)="updateCollegue()">Update</button>
   </div>
   
 </ul>

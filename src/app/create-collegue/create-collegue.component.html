@@ -1,5 +1,5 @@
 <div class="container">
-  <form (ngSubmit)="submit()" #newCollegue="ngForm">
+  <form #newCollegue="ngForm" class="was-validated" novalidate>
 
     <h2>Create a new sissy colleague !</h2>
     <hr/>
@@ -12,14 +12,16 @@
         <div class="form-group">
           <label class="col-4 col-form-label">Name </label>
           <div class="col-12">
-          <input name="name" type="texte" class="form-control" #name="ngModel" [(ngModel)]="newCol.name" required>
+          <input name="name" type="texte" class="form-control is-valid" #name="ngModel" [(ngModel)]="newCol.name" required>
+          <div class="invalid-feedback">Name is missing !</div>
           </div>
         </div>
      
         <div class="form-group">
           <label class="col-4 col-form-label">Firstname </label>
           <div class="col-12">
-          <input name="firstname" type="texte" class="form-control" #firstname="ngModel" [(ngModel)]="newCol.firstname" required>
+          <input name="firstname" type="texte" class="form-control is-valid" #firstname="ngModel" [(ngModel)]="newCol.firstname" required>
+          <div class="invalid-feedback">Firstname is missing !</div>
           </div>
         </div>
       </div>
@@ -28,23 +30,30 @@
         <div class="form-group">
           <label class="col-4 col-form-label">Birthdate </label>
           <div class="col-12">
-          <input name="birthdate" type="date" class="form-control" #birthdate="ngModel" [(ngModel)]="newCol.birthdate" required>
+          <input name="birthdate" type="date" class="form-control is-valid" #birthdate="ngModel" [(ngModel)]="newCol.birthdate" required>
+          <div class="invalid-feedback">Birthdate is missing !</div>
           </div>
         </div>
         <div class="form-group">
           <label class="col-4 col-form-label">Email </label>
           <div class="col-12">
-          <input name="email" type="texte" class="form-control" #email="ngModel" [(ngModel)]="newCol.email" required>
+          <input name="email" type="texte" class="form-control is-valid" #email="ngModel" [(ngModel)]="newCol.email" required>
+          <div class="invalid-feedback">Email is missing !</div>
           </div>
         </div>
       </div>
       <div class="form-group">
         <label class="col-4 col-form-label">PhotoUrl </label>
         <div class="col-9">
-        <input name="photoUrl" type="texte" class="form-control" #photoUrl="ngModel" [(ngModel)]="newCol.photoUrl" required>
+        <input name="photoUrl" type="texte" class="form-control is-valid" #photoUrl="ngModel" [(ngModel)]="newCol.photoUrl" required>
+        <div class="invalid-feedback">PhotoUrl is missing !</div>
         </div>
       </div>
-      <div class="text-right"><button class="col-3" type="submit()" (click)="createNewCollegue()">Create</button></div>
+      <div class="row">
+        <button class="col-3" type="button" (click)="backButtonValue()">Back</button>
+        <button class="col-3" type="button" (click)="createNewCollegue()" [disabled]="!newCollegue.valid">Create</button>
+      </div>
+      <p>{{backendMsg}}</p>
 
     </ul>
 
