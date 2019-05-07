@@ -8,10 +8,10 @@ import { Subscription } from 'rxjs';
   templateUrl: './find-collegue-by-name.component.html'
 })
 
-export class FindCollegueByNameComponent implements OnInit, OnDestroy {
+export class FindCollegueByNameComponent implements OnInit {
   
-  @Input() mat:string[] = [];
-  @Input() errorMsg = '';
+  mat:string[] = [];
+  errorMsg = '';
   afficherListe: Boolean;
   errorOrNot: Boolean;
 
@@ -43,10 +43,6 @@ export class FindCollegueByNameComponent implements OnInit, OnDestroy {
       this.errorMsg = err;
       this.errorOrNot = true;
     });
-  }
-
-  ngOnDestroy() {
-    this.actionSub.unsubscribe();
   }
 
 }

@@ -14,7 +14,7 @@ export class CollegueComponent implements OnInit {
   updateCol:Boolean;  //tells us if we got to update a colleague or not
   responseFormIsOk:Boolean;
   backendMsg :string ='';
-  createCollegueBoolean:Boolean = false;
+  createCollegueBoolean:Boolean = false; 
 
   constructor(private _srv:DataService) {}
 

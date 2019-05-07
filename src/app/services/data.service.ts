@@ -3,6 +3,7 @@ import { Collegue } from '../models/Collegue';
 import { Subject, Observable } from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment'
+import {Trombinoscope} from '../models/Trombinoscope'
 
 import {tap } from 'rxjs/operators'
 
@@ -37,4 +38,9 @@ export class DataService {
   addNewCollegue(newCol :Collegue) :Observable<Collegue>{
     return this._http.post<Collegue>(`${environment.backendUrl}`, newCol);
   }
+
+  showPhotos() :Observable<Trombinoscope> {
+    return this._http.get<Trombinoscope>(`${environment.backendUrl}/photos`);
+  }
+
 }

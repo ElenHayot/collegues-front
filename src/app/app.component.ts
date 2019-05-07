@@ -1,19 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import {DataService} from './services/data.service';
-import { Collegue } from './models/Collegue';
 
 @Component({
   selector: 'app-root',
   template: `
    
-  <div class="row">
-  
-    <app-find-collegue-by-name class="col-6"></app-find-collegue-by-name>
+  <header><h1 class="text-center">Administration Collegue</h1></header>
+  <nav>
+    <app-menu></app-menu>
+    <a routerLink="/accueil"></a>
+  </nav>
 
-    <app-collegue  class="col-6"></app-collegue>
+  <body>
+    <hr /><br />
 
-  </div>
-  <hr />
+    <router-outlet></router-outlet>
+
+    <br /><hr />
+  </body>
+
+  <footer>Add buttons "contact", "accueil" ... </footer>
 
   `
 })
@@ -21,7 +26,7 @@ import { Collegue } from './models/Collegue';
 export class AppComponent implements OnInit {
 
 
-  constructor(private __dataSrv:DataService) {}
+  constructor() {}
 
   ngOnInit(): void {
   }

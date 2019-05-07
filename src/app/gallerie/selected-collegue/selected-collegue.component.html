@@ -1,0 +1,36 @@
+<div class="container" name="informationOneCollegue">
+
+  <div class="card border-info">
+    <div class="card-header">
+        <img src='{{col.photoUrl}}' width='200' heigth='200' class="card-img-top">
+    </div>
+
+    <div class="card-body">
+      <div class="row">
+        <h6 class="col-6">Matricule : </h6>
+        <p class="col-6">{{col.matricule}}</p>
+      </div>
+      <div class="row">
+        <h6 class="col-6">Name : </h6>
+        <p class="col-6">{{col.name | uppercase}}</p>
+      </div>
+      <div class="row">
+        <h6 class="col-6">Firstname : </h6>
+        <p class="col-6">{{col.firstname}}</p>
+      </div>
+      <div class="row">
+        <h6 class="col-6">BirthDate : </h6>
+        <p class="col-6">{{col.birthdate | date: 'dd/MM/yyyy'}}</p>
+      </div>
+      <div class="row">
+        <h6 class="col-6">Email : </h6>
+        <p class="col-6">{{col.email}}</p>
+      </div>
+    </div>
+  </div>
+
+<div class="text-right">
+  <a routerLink="../" class="btn btn-light" type="button">Back to the gallery</a>
+</div>
+
+</div>

@@ -15,17 +15,20 @@ export class CreateCollegueComponent implements OnInit {
   responseFormIsOk:Boolean = false;
 
   constructor(private _srv:DataService) { }
-
-
+ 
+ 
   ngOnInit() {
   }
 
   createNewCollegue() {
     
     this._srv.addNewCollegue(this.newCol).subscribe(
-      returnValue => {console.log(returnValue);
-                      this.backButtonValue();},
-      err => {this.backendMsg = err.error;
+      returnValue => {console.log(returnValue.matricule);
+        this.createCollegueBoolean.emit(false);},
+      
+      err => {
+      
+        this.backendMsg = 'un erudit !';
               this.responseFormIsOk = false;});
   }
 

@@ -1,0 +1,16 @@
+<div class="container" name="allPhotos" *ngIf="showCollegueDetails==false">
+
+<div class="card-deck">
+  <div *ngFor="let element of trombi">
+      <div class="row">
+        <a routerLink='{{element.matricule}}'>
+          <div class="card" style="width: 12rem;">
+            <img src='{{element.photoUrl}}' width='200' heigth='200' class="card-img-top">
+          </div>
+        </a>
+      </div>
+  </div>
+</div>
+
+</div>
+
