@@ -4,6 +4,10 @@
       <div class="col-3"><button class="btn-outline-secondary" type="button" routerLink="/accueil">Accueil</button></div>
       <div class="col-3"><button class="btn-outline-secondary" type="button" routerLink="/gallerie">Gallerie</button></div>
       <div class="col-3"><button class="btn-outline-secondary" type="button" routerLink="/about">About</button></div>
+      <div class="col-3" *ngIf="connectValue==false"><button class="btn-outline-secondary" type="button" routerLink="/auth">Connect</button></div>
+      <div class="col-3" *ngIf="connectValue==true">
+        <button  class="btn-outline-secondary" type="button" (click)=disconnect()>Disconnect</button>
+      </div>
     </form>
   </nav>
 </div>

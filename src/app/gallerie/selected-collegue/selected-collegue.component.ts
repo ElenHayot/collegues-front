@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from '../../services/data.service';
 import { Collegue } from '../../models/Collegue';
 import { ActivatedRoute, ParamMap } from '@angular/router';
@@ -10,7 +10,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class SelectedCollegueComponent implements OnInit {
 
-  col:Collegue = new Collegue('', '', undefined, '', '', '');
+  col:Collegue = new Collegue('', '', undefined, '', '', []);
   matricule: string;
 
   constructor(private _srv: DataService, private route: ActivatedRoute) {

@@ -1,0 +1,15 @@
+<div class="container">
+
+  <form class="form-inline" #authenticate="ngForm">
+    <div class="form-group">
+      <label for="enterEmail">Email</label>
+      <input type="email" name="email" class="form-control mx-sm-4" #email="ngModel" [(ngModel)]="authentCollegue.email">
+      <label for="enterPassword">Password</label>
+      <input type="password" name="password" class="form-control mw-sm-4" #password="ngModel" [(ngModel)]="authentCollegue.password">     
+    </div>
+    <div class="text-right">
+      <button class="btn btn-light" type="button" (click)=connect()>Connection</button>
+    </div>
+  </form>
+  
+</div>

@@ -9,7 +9,7 @@ import { CollegueToUpdate } from '../models/collegue-to-update';
 })
 export class CollegueComponent implements OnInit {
 
-  col:Collegue = new Collegue('', '', undefined, '', '', '');
+  col:Collegue = new Collegue('', '', undefined, '', '', []);
   collegueToUp :CollegueToUpdate = new CollegueToUpdate('','');
   updateCol:Boolean;  //tells us if we got to update a colleague or not
   responseFormIsOk:Boolean;

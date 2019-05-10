@@ -5,6 +5,8 @@ export class Collegue{
         public birthdate:Date,
         public email:string,
         public photoUrl:string,
-        public matricule?:string
+        public roles:string[],
+        public matricule?:string,
+        public password?:string
     ){}
 }

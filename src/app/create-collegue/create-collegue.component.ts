@@ -9,7 +9,7 @@ import { DataService } from '../services/data.service';
 })
 export class CreateCollegueComponent implements OnInit {
 
-  newCol =  new Collegue('', '', undefined, '', '', '');
+  newCol =  new Collegue('', '', undefined, '', '', []);
   @Output() createCollegueBoolean:EventEmitter<Boolean> = new EventEmitter<Boolean>();
   backendMsg :string ='';
   responseFormIsOk:Boolean = false;
@@ -27,9 +27,9 @@ export class CreateCollegueComponent implements OnInit {
         this.createCollegueBoolean.emit(false);},
       
       err => {
-      
-        this.backendMsg = 'un erudit !';
-              this.responseFormIsOk = false;});
+        this.backendMsg = err.error;
+        this.responseFormIsOk = false;}
+    );
   }
 
   backButtonValue() {

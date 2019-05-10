@@ -16,7 +16,10 @@ import { ROUTES } from './app.routes';
 import { AccueilComponent } from './accueil/accueil.component';
 import { GallerieComponent } from './gallerie/gallerie.component';
 import { SelectedCollegueComponent } from './gallerie/selected-collegue/selected-collegue.component';
-import { AboutComponent } from './about/about.component'
+import { AboutComponent } from './about/about.component';
+import { CommentCollegueComponent } from './comment-collegue/comment-collegue.component';
+import { AuthentificationComponent } from './authentification/authentification.component';
+import { MeComponent } from './authentification/me/me.component'
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { AboutComponent } from './about/about.component'
     AccueilComponent,
     GallerieComponent,
     SelectedCollegueComponent,
-    AboutComponent
+    AboutComponent,
+    CommentCollegueComponent,
+    AuthentificationComponent,
+    MeComponent
   ],
   imports: [
     BrowserModule,

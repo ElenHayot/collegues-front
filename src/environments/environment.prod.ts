@@ -1,4 +1,7 @@
+const baseUrl= 'https://hayot-collegues-api.herokuapp.com';
+
 export const environment = {
   production: true,
-  backendUrl: 'https://hayot-collegues-api.herokuapp.com/collegues'
+  baseUrl,
+  backendUrl: `${this.baseUrl}/collegues`
 };
