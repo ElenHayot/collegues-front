@@ -1,4 +1,37 @@
+<div class="container">
+
 <p>
   My Identity !
 </p>
-<div *ngFor="let item of meInfos">{{item}}</div>
+
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src='{{meInfos.photoUrl}}' width='200' heigth='200'>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <div class="table table-borderless">
+          <tr>
+            <td><h6>Matricule </h6></td>
+            <td>{{meInfos.matricule}}</td>
+          </tr>
+          <tr>
+            <td><h6>Name </h6></td>
+            <td>{{meInfos.name}}</td>
+          </tr>
+          <tr>
+            <td><h6>Firstname </h6></td>
+            <td>{{meInfos.firstname}}</td>
+          </tr>
+          <tr>
+            <td><h6>Email </h6></td>
+            <td>{{meInfos.email}}</td>
+          </tr>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>

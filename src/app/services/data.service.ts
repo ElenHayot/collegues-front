@@ -8,6 +8,7 @@ import {Trombinoscope} from '../models/trombinoscope';
 import {tap } from 'rxjs/operators'
 import { Comment } from '../models/comment';
 import { InfosAuthentification } from '../models/infos-authentification';
+import { MeCollegue } from '../models/me-collegue';
 
 @Injectable({
   providedIn: 'root'
@@ -59,8 +60,8 @@ export class DataService {
     return this._http.post<InfosAuthentification>(`${environment.baseUrl}/auth`, authentCollegue, {withCredentials : true}); 
   }
 
-  meInformations() :Observable<string[]> {
-    return this._http.get<string[]>(`${environment.baseUrl}/me`, {withCredentials : true});
+  meInformations() :Observable<MeCollegue> {
+    return this._http.get<MeCollegue>(`${environment.baseUrl}/me`, {withCredentials : true});
   }
 
   disconnectCollegue() :Observable<any> {
